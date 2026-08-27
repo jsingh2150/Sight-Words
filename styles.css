@@ -126,9 +126,8 @@ main {
     align-items: center;
 
     font-family:
-        "Noto Sans Gurmukhi",
-        "Raavi",
-        "Nirmala UI",
+        Arial,
+        Helvetica,
         sans-serif;
 
     font-size: 10px;
