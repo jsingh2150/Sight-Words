@@ -385,8 +385,7 @@ function updateCard() {
             card.style.color =
                 "#111827";
 
-            card.style.fontSize =
-                "220px";
+           
 
         }
 
