@@ -1,0 +1,378 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #111827;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+}
+
+
+header h1 {
+
+    font-size: 2.5rem;
+
+    color: #2563eb;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+}
+
+
+header p {
+
+    color: #666;
+
+    font-size: 1.1rem;
+
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.card {
+
+    width: 600px;
+
+    height: 500px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family:
+        "Noto Sans Gurmukhi",
+        "Raavi",
+        "Nirmala UI",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #111827;
+
+    user-select: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.card-number {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.counter {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #4b5563;
+
+    text-align: center;
+
+    min-height: 25px;
+
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-container {
+
+    width: 420px;
+
+    max-width: 85vw;
+
+    height: 12px;
+
+    background: #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}
+
+
+button {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+button:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+}
+
+
+button:active {
+
+    transform: scale(0.96);
+
+}
+
+
+/* =========================================
+   START OVER
+========================================= */
+
+.reset-button {
+
+    background: #6b7280;
+
+    margin-top: 5px;
+
+}
+
+
+.reset-button:hover {
+
+    background: #4b5563;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    header h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    header p {
+
+        font-size: 1rem;
+
+    }
+
+
+    .card {
+
+        width: 85vw;
+
+        height: 85vw;
+
+        max-width: 420px;
+
+        max-height: 420px;
+
+        font-size: 40vw;
+
+    }
+
+
+    .progress-container {
+
+        width: 85vw;
+
+    }
+
+
+    .controls {
+
+        flex-direction: column;
+
+        width: 90%;
+
+        max-width: 400px;
+
+    }
+
+
+    button {
+
+        width: 100%;
+
+    }
+
+}       
