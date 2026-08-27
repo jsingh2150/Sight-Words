@@ -126,19 +126,26 @@ main {
     align-items: center;
 
     font-family:
+        "Noto Sans Gurmukhi",
+        "Raavi",
+        "Nirmala UI",
         Arial,
         Helvetica,
         sans-serif;
 
-    font-size: 10px;
+    font-size: 100px;
 
     font-weight: 600;
 
-    line-height: 1;
+    line-height: 1.1;
 
     color: #111827;
 
     user-select: none;
+
+    text-align: center;
+
+    padding: 30px;
 
     transition:
         opacity 0.25s ease,
@@ -147,7 +154,6 @@ main {
         color 0.25s ease;
 
 }
-
 
 /* =========================================
    CARD NUMBER
@@ -345,7 +351,7 @@ footer {
 
         max-height: 420px;
 
-        font-size: 40vw;
+        font-size: 70px;
 
     }
 
