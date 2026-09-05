@@ -53,11 +53,21 @@
                 id="card"
                 class="card"
             >
-                
+                <!-- Sight Word rendered here -->
             </div>
 
         </div>
 
+
+        <!-- =================================
+             FLAG ACTION BUTTON
+        ================================== -->
+
+        <div class="flag-container">
+            <button id="flagBtn" class="flag-button">
+                🚩 Flag for Review
+            </button>
+        </div>
 
 
         <!-- =================================
@@ -68,7 +78,7 @@
             id="cardNumber"
             class="card-number"
         >
-            Card 1 of 87
+            Card 1 of 86
         </div>
 
 
@@ -81,7 +91,7 @@
             id="counter"
             class="counter"
         >
-            0 of 86 Words completed • 86 remaining
+            0 Flagged • 86 Remaining
         </div>
 
 
@@ -107,33 +117,31 @@
 
         <div class="controls">
 
-    <button id="prevBtn">
-        ← Previous
-    </button>
+            <button id="prevBtn">
+                ← Previous
+            </button>
 
-    <!-- NEW: Mark word to re-queue it -->
-    <button id="flagBtn" class="btn-flag">
-        ❌ Needs Practice
-    </button>
 
-    <!-- NEW: Mark word as mastered -->
-    <button id="correctBtn" class="btn-correct">
-        ✅ Got It
-    </button>
+            <button id="randomBtn">
+                🎲 Random
+            </button>
 
-    <button id="randomBtn">
-        🎲 Random
-    </button>
 
-    <button id="shuffleBtn">
-        🔀 Shuffle
-    </button>
+            <button id="shuffleBtn">
+                🔀 Shuffle
+            </button>
 
-    <button id="nextBtn">
-        Next →
-    </button>
 
-</div>
+            <button id="reviewFlaggedBtn" class="mode-button">
+                🚩 Review Flagged (0)
+            </button>
+
+
+            <button id="nextBtn">
+                Next →
+            </button>
+
+        </div>
 
 
 
