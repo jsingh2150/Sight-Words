@@ -1,48 +1,230 @@
 /* =========================================
-   FLAGGED CARD HIGHLIGHT
+   GLOBAL STYLES & LAYOUT
 ========================================= */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================================
+   HEADER & PROGRESS BAR
+========================================= */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #2563eb;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* =========================================
+   CARD & FLAGGING VISUALS
+========================================= */
+
+.card-container {
+  position: relative;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  height: 240px;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.12s ease, opacity 0.12s ease, border-color 0.2s ease, background-color 0.2s ease;
+  user-select: none;
+  padding: 16px;
+  word-break: break-word;
+}
+
+/* Flagged State Styling */
 .card.is-flagged {
-    border: 4px solid #ef4444;
-    background: #fef2f2;
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.flag-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.flag-btn:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.flag-btn.active {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
 }
 
 /* =========================================
-   FLAG BUTTON
+   BUTTON CONTROLS
 ========================================= */
 
-.flag-container {
-    margin-top: 5px;
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.flag-button {
-    background: #ffffff;
-    color: #4b5563;
-    border: 2px solid #d1d5db;
-    padding: 10px 22px;
-    border-radius: 20px;
-    font-weight: 600;
+.btn-group-primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.flag-button:hover {
-    background: #f3f4f6;
-    color: #111827;
+.btn-group-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.flag-button.active {
-    background: #fee2e2;
-    color: #dc2626;
-    border-color: #fca5a5;
+.btn {
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #4b5563;
+  border: 1px dashed #d1d5db;
+}
+
+.btn-outline:hover {
+  background-color: #f9fafb;
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+.btn-danger {
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.btn-danger:hover {
+  background-color: #fef2f2;
 }
 
 /* =========================================
-   MODE BUTTON (Review Flagged)
+   ACCESSIBILITY & RESPONSIVE
 ========================================= */
 
-.mode-button {
-    background: #f59e0b;
-}
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
 
-.mode-button:hover {
-    background: #d97706;
+  .card {
+    height: 200px;
+    font-size: 2.25rem;
+  }
+
+  .btn {
+    padding: 10px 12px;
+    font-size: 0.875rem;
+  }
 }
