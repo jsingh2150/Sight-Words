@@ -101,7 +101,13 @@ const gurmukhiLetters = [
 	"Could",
   "I",
   "Look",
-	"He",
+	"He"
+	"Under",
+	"Long",
+	"Say",
+	"Now",
+	"Than",
+	"When",
 ];
 
 
