@@ -2,185 +2,92 @@
 <html lang="pa">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sight Words</title>
-
     <link rel="stylesheet" href="styles.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =================================
-         HEADER
-    ================================== -->
-
     <header>
-
         <h1>Sight Words</h1>
-
-        <p>
-            Learn many sight words
-        </p>
-
+        <p>Learn many sight words</p>
     </header>
-
-
-
-    <!-- =================================
-         MAIN
-    ================================== -->
 
     <main>
 
-
         <!-- =================================
-             CARD
+             DOMINANT CARD
         ================================== -->
-
         <div class="card-container">
-
-            <div
-                id="card"
-                class="card"
-            >
+            <div id="card" class="card">
                 <!-- Sight Word rendered here -->
             </div>
-
         </div>
 
-
         <!-- =================================
-             FLAG ACTION BUTTON
+             PRIMARY QUICK CONTROLS (DIRECTLY BELOW CARD)
         ================================== -->
+        <div class="primary-controls">
+            <button id="prevBtn" class="btn btn-secondary">
+                ← Prev
+            </button>
 
-        <div class="flag-container">
             <button id="flagBtn" class="flag-button">
-                🚩 Flag for Review
+                🚩 Flag
+            </button>
+
+            <button id="nextBtn" class="btn btn-primary">
+                Next →
             </button>
         </div>
 
-
         <!-- =================================
-             CARD NUMBER
+             CARD NUMBER & PROGRESS
         ================================== -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span id="cardNumber" class="card-number">Card 1 of 86</span>
+                <span id="counter" class="counter">0 Flagged • 86 Remaining</span>
+            </div>
 
-        <div
-            id="cardNumber"
-            class="card-number"
-        >
-            Card 1 of 86
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
         </div>
 
-
-
         <!-- =================================
-             PROGRESS
+             SECONDARY CONTROLS
         ================================== -->
-
-        <div
-            id="counter"
-            class="counter"
-        >
-            0 Flagged • 86 Remaining
-        </div>
-
-
-
-        <!-- =================================
-             PROGRESS BAR
-        ================================== -->
-
-        <div class="progress-container">
-
-            <div
-                id="progressBar"
-                class="progress-bar"
-            ></div>
-
-        </div>
-
-
-
-        <!-- =================================
-             CONTROLS
-        ================================== -->
-
-        <div class="controls">
-
-            <button id="prevBtn">
-                ← Previous
-            </button>
-
-
-            <button id="randomBtn">
+        <div class="secondary-controls">
+            <button id="randomBtn" class="btn btn-utility">
                 🎲 Random
             </button>
 
-
-            <button id="shuffleBtn">
+            <button id="shuffleBtn" class="btn btn-utility">
                 🔀 Shuffle
             </button>
-
 
             <button id="reviewFlaggedBtn" class="mode-button">
                 🚩 Review Flagged (0)
             </button>
-
-
-            <button id="nextBtn">
-                Next →
-            </button>
-
         </div>
-
-
 
         <!-- =================================
              START OVER
         ================================== -->
-
-        <button
-            id="resetBtn"
-            class="reset-button"
-        >
-
+        <button id="resetBtn" class="reset-button">
             ↻ Start Over
-
         </button>
-
 
     </main>
 
-
-
-    <!-- =================================
-         FOOTER
-    ================================== -->
-
     <footer>
-
         Sight Words Learning Game
-
     </footer>
 
-
-
-    <!-- =================================
-         JAVASCRIPT
-    ================================== -->
-
     <script src="script.js"></script>
-
 
 </body>
 
