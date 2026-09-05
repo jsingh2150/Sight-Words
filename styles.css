@@ -1,194 +1,88 @@
 /* =========================================
-   RESET & BASE STYLES
+   RESET & MOBILE BASE STYLES
 ========================================= */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Removes iOS gray flash on button tap */
+  user-select: none;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevents iOS screen rubber-banding */
+  background-color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f1f5f9;
-  color: #0f172a;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
+  align-items: center;
 }
 
 /* =========================================
-   HEADER & FOOTER
+   APP CONTAINER (IOS SAFE AREA RESPECTED)
+========================================= */
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for modern iOS Safari */
+  padding: 16px;
+  
+  /* Fits inside iPhone 17 Pro Max Dynamic Island & Home Bar */
+  padding-top: max(16px, env(safe-area-inset-top));
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* =========================================
+   HEADER & PROGRESS
 ========================================= */
 
 header {
   text-align: center;
-  margin-bottom: 16px;
 }
 
 header h1 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #1e293b;
-  margin-bottom: 2px;
+  color: #0f172a;
 }
 
 header p {
   color: #64748b;
-  font-size: 0.9rem;
-}
-
-footer {
-  margin-top: 20px;
-  text-align: center;
   font-size: 0.85rem;
-  color: #94a3b8;
 }
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
-main {
-  background: #ffffff;
-  width: 100%;
-  max-width: 520px;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* =========================================
-   DOMINANT CARD
-========================================= */
-
-.card-container {
-  width: 100%;
-}
-
-.card {
-  width: 100%;
-  height: 320px; /* Dominant vertical height */
-  background-color: #ffffff;
-  border: 3px solid #e2e8f0;
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4.25rem; /* Large, clear sight word font */
-  font-weight: 800;
-  text-align: center;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02), 0 6px 16px -4px rgba(0, 0, 0, 0.05);
-  transition: all 0.15s ease;
-  user-select: none;
-  padding: 16px;
-  word-break: break-word;
-}
-
-/* Flagged state styling */
-.card.is-flagged {
-  border-color: #ef4444;
-  background-color: #fef2f2;
-  color: #991b1b;
-}
-
-/* =========================================
-   PRIMARY QUICK CONTROLS (DIRECTLY BELOW CARD)
-========================================= */
-
-.primary-controls {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 1.5fr; /* Gives Next more presence */
-  gap: 10px;
-  align-items: center;
-}
-
-.primary-controls button {
-  padding: 14px 12px;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.primary-controls button:active {
-  transform: scale(0.97);
-}
-
-/* Next Button - High Prominence */
-.btn-primary {
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-.btn-primary:hover {
-  background-color: #1d4ed8;
-}
-
-/* Previous Button */
-.btn-secondary {
-  background-color: #f1f5f9;
-  color: #334155;
-  border: 1px solid #cbd5e1;
-}
-
-.btn-secondary:hover {
-  background-color: #e2e8f0;
-}
-
-/* Flag Button - Right next to Next/Prev */
-.flag-button {
-  background-color: #f8fafc;
-  border: 2px solid #cbd5e1;
-  color: #475569;
-}
-
-.flag-button:hover {
-  background-color: #f1f5f9;
-  border-color: #94a3b8;
-  color: #0f172a;
-}
-
-.flag-button.active {
-  background-color: #fee2e2;
-  border-color: #ef4444;
-  color: #dc2626;
-}
-
-/* =========================================
-   PROGRESS SECTION
-========================================= */
 
 .progress-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .progress-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #64748b;
 }
 
 .progress-container {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background-color: #e2e8f0;
   border-radius: 9999px;
   overflow: hidden;
@@ -203,6 +97,94 @@ main {
 }
 
 /* =========================================
+   DOMINANT FLASHCARD
+========================================= */
+
+.card-container {
+  flex: 1; /* Fills screen space vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  min-height: 220px;
+  background-color: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.2s ease, background-color 0.2s ease;
+  padding: 16px;
+  word-break: break-word;
+}
+
+.card.is-flagged {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+/* =========================================
+   PRIMARY CONTROLS (LARGE THUMB TARGETS)
+========================================= */
+
+.primary-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 10px;
+}
+
+.primary-controls button {
+  min-height: 56px; /* Sized for easy single-thumb tap */
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.primary-controls button:active {
+  transform: scale(0.95); /* Haptic-like visual push on tap */
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.flag-button {
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  color: #475569;
+}
+
+.flag-button.active {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #dc2626;
+}
+
+/* =========================================
    SECONDARY CONTROLS
 ========================================= */
 
@@ -213,74 +195,33 @@ main {
 }
 
 .btn-utility {
-  padding: 10px;
-  font-size: 0.875rem;
+  min-height: 44px;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #e2e8f0;
   background-color: #ffffff;
   color: #475569;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.btn-utility:hover {
-  background-color: #f8fafc;
-  border-color: #cbd5e1;
 }
 
 .mode-button {
   grid-column: span 2;
-  padding: 10px;
-  font-size: 0.875rem;
+  min-height: 44px;
+  font-size: 0.85rem;
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #fef3c7;
   border: 1px solid #fde047;
   color: #854d0e;
-  cursor: pointer;
-  transition: all 0.15s ease;
 }
-
-.mode-button:hover {
-  background-color: #fde68a;
-}
-
-/* =========================================
-   RESET BUTTON
-========================================= */
 
 .reset-button {
   width: 100%;
-  padding: 8px;
+  min-height: 40px;
   background-color: transparent;
   color: #94a3b8;
   border: 1px dashed #cbd5e1;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.reset-button:hover {
-  background-color: #fef2f2;
-  color: #dc2626;
-  border-color: #fca5a5;
-}
-
-/* =========================================
-   MOBILE RESPONSIVENESS
-========================================= */
-
-@media (max-width: 480px) {
-  .card {
-    height: 250px;
-    font-size: 3.25rem;
-  }
-
-  .primary-controls button {
-    padding: 12px 8px;
-    font-size: 0.875rem;
-  }
 }
