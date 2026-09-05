@@ -3,32 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Sight Words</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Sight Words</h1>
-        <p>Learn many sight words</p>
-    </header>
+    <div class="app-container">
+        
+        <header>
+            <h1>Sight Words</h1>
+            <p>Learn many sight words</p>
+        </header>
 
-    <main>
+        <!-- PROGRESS SECTION -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span id="cardNumber" class="card-number">Card 1 of 86</span>
+                <span id="counter" class="counter">0 Flagged • 86 Remaining</span>
+            </div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
 
-        <!-- =================================
-             DOMINANT CARD
-        ================================== -->
+        <!-- MAIN FLASHCARD -->
         <div class="card-container">
             <div id="card" class="card">
                 <!-- Sight Word rendered here -->
             </div>
         </div>
 
-        <!-- =================================
-             PRIMARY QUICK CONTROLS (DIRECTLY BELOW CARD)
-        ================================== -->
+        <!-- PRIMARY CONTROLS (MAIN THUMB TARGETS) -->
         <div class="primary-controls">
             <button id="prevBtn" class="btn btn-secondary">
                 ← Prev
@@ -43,23 +52,7 @@
             </button>
         </div>
 
-        <!-- =================================
-             CARD NUMBER & PROGRESS
-        ================================== -->
-        <div class="progress-section">
-            <div class="progress-info">
-                <span id="cardNumber" class="card-number">Card 1 of 86</span>
-                <span id="counter" class="counter">0 Flagged • 86 Remaining</span>
-            </div>
-
-            <div class="progress-container">
-                <div id="progressBar" class="progress-bar"></div>
-            </div>
-        </div>
-
-        <!-- =================================
-             SECONDARY CONTROLS
-        ================================== -->
+        <!-- SECONDARY CONTROLS -->
         <div class="secondary-controls">
             <button id="randomBtn" class="btn btn-utility">
                 🎲 Random
@@ -74,18 +67,11 @@
             </button>
         </div>
 
-        <!-- =================================
-             START OVER
-        ================================== -->
         <button id="resetBtn" class="reset-button">
             ↻ Start Over
         </button>
 
-    </main>
-
-    <footer>
-        Sight Words Learning Game
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 
